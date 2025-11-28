@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+    --primary-color: #0d47a1; /* A deep blue */
+    --secondary-color: #6a1b9a; /* A vibrant purple */
+    --background-color: #1a1a2e; /* Dark navy blue */
+    --surface-color: #16213e; /* Slightly lighter navy for surfaces */
+    --text-color: #e0e0e0;
+    --text-color-muted: #a0a0a0;
+    --success-color: #00e676;
+    --error-color: #ff3d00;
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background-color: var(--surface-color);
+    padding: 2rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--primary-color);
+}
+
+h2 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color-muted);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--background-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 10px rgba(106, 27, 154, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 1rem;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.message {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-color-muted);
+    font-size: 0.9rem;
+}
+
+.message a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.message a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.response-message {
+    margin-top: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: none; /* Hidden by default */
+}
+
+.response-message.success {
+    background-color: var(--success-color);
+    color: var(--background-color);
+    display: block;
+}
+
+.response-message.error {
+    background-color: var(--error-color);
+    color: var(--text-color);
+    display: block;
+}
