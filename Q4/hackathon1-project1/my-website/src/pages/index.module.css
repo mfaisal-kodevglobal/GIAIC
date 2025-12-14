@@ -1,0 +1,348 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.delay1 {
+  animation-delay: 0.3s;
+}
+
+.delay2 {
+  animation-delay: 0.6s;
+}
+
+.animateLogo {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hero Banner */
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a2a6c, #2a5298, #b21f1f, #1a2a6c);
+  color: white;
+  position: relative;
+}
+
+/* Add animated background elements */
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255,255,255,0.05) 0%, transparent 20%);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.mainLogo {
+  max-width: 150px;
+  max-height: 150px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+  transition: transform 0.3s ease;
+}
+
+/* Hero Slider */
+.heroSlider {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #2c3e50, #1a2a6c, #2a5298);
+  color: white;
+}
+
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slideContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 2rem;
+}
+
+.slideText {
+  flex: 1;
+  max-width: 50%;
+  text-align: left;
+}
+
+.slideImage {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.robotImagePlaceholder {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.robotIcon {
+  font-size: 10rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.slideTitle {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.slideSubtitle {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #a0d2ff;
+  font-weight: normal;
+}
+
+.slideDescription {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.slideButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.sliderNavigation {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.navDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.navDot.active {
+  background: white;
+}
+
+.navDot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.bookOverview {
+  background-color: #f9f9f9;
+}
+
+.learningPath {
+  background-color: white;
+}
+
+.featureCard {
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  height: 100%;
+  background-color: white;
+  border-left: 4px solid #2a5298;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.stepCircle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #2a5298;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+  transition: transform 0.3s ease;
+}
+
+.stepCircle:hover {
+  transform: scale(1.1);
+}
+
+/* Adjust the color scheme to be more robotics-themed */
+.heroBanner {
+  background: linear-gradient(135deg, #1a2a6c, #2a5298, #b21f1f, #1a2a6c);
+  color: white;
+}
+
+.heroBanner h1 {
+  color: white;
+}
+
+.heroBanner p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Button styles */
+.button--primary {
+  background-color: #1a2a6c;
+  border-color: #1a2a6c;
+  transition: all 0.3s ease;
+}
+
+.button--primary:hover {
+  background-color: #0d1a4d;
+  border-color: #0d1a4d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.button--secondary {
+  background-color: #b21f1f;
+  border-color: #b21f1f;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.button--secondary:hover {
+  background-color: #8a1818;
+  border-color: #8a1818;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .heroSlider {
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .slideContent {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .slideText, .slideImage {
+    max-width: 100%;
+  }
+
+  .slideText {
+    margin-bottom: 2rem;
+  }
+
+  .slideTitle {
+    font-size: 2rem;
+  }
+
+  .robotImagePlaceholder {
+    width: 200px;
+    height: 200px;
+  }
+
+  .robotIcon {
+    font-size: 6rem;
+  }
+}
